@@ -1,0 +1,47 @@
+.result-form {
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: black;
+  backdrop-filter: blur(1px);
+  width: 30%;
+  height: 60%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  animation: result-form 1.5s ease-out forwards;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.currency-from,
+.currency-to {
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+}
+
+.currency-from {
+  border: 1px solid white;
+}
+
+.arrow-icon i {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.currency-to {
+  border: 1px solid white;
+}

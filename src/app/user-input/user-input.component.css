@@ -1,0 +1,94 @@
+input {
+  border: 1px solid white;
+  border-radius: 35px;
+  color: white;
+  position: absolute;
+  text-align: center;
+  font-family: "Special Gothic Expanded One";
+  font-size: 8rem;
+  width: 40%;
+  height: 15vh;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.currency {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  border: 1px solid white;
+  border-radius: 50px;
+  width: 20vw; /* responsive based on viewport width */
+  height: 6vh;
+  position: relative;
+  top: 40%;
+  left: 40%;
+  background-color: transparent;
+}
+
+.currency button {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 0; /* prevent overflow */
+}
+
+.currency button:first-child {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.currency button:last-child {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* 🔽 Tablet & below */
+@media (max-width: 768px) {
+  .currency {
+    width: 40vw;
+    height: 6vh;
+    left: 30%;
+  }
+
+  .currency button {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* 🔽 Mobile */
+@media (max-width: 480px) {
+  .currency {
+    width: 80vw;
+    left: 10%;
+  }
+
+  .currency button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 80%;
+    top: 50%;
+    height: 7rem;
+    font-size: 5rem;
+  }
+}

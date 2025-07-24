@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62%;
+}
+
+body {
+  font-family: "Special Gothic Expanded One";
+  background-color: black;
+  height: 100vh;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}

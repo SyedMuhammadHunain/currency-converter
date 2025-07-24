@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5rem 5rem;
+}
+
+img {
+  height: 5rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
+}

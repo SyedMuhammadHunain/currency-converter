@@ -1,0 +1,11 @@
+@if(isShow()) {
+<div class="result-form">
+  <div class="currency-from">
+    {{ selectedCurrency() }} - {{ enteredAmount() }}
+  </div>
+  <div class="arrow-icon">
+    <i class="fa-solid fa-arrow-down"></i>
+  </div>
+  <div class="currency-to">PKR - {{ convertedAmount() }}</div>
+</div>
+}
