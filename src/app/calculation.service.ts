@@ -8,9 +8,9 @@ export class CalculationService {
 
   convertCurrency(enteredAmount: number, currency: string) {
     let converted: number;
-    if (currency === 'usd') {
+    if (currency === 'USD') {
       converted = enteredAmount * 300;
-    } else if (currency === 'euro') {
+    } else if (currency === 'EUR') {
       converted = enteredAmount * 305;
     } else {
       converted = 0;

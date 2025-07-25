@@ -14,6 +14,8 @@ export class UserInputComponent {
   enteredAmount = '';
   selectedCurrency = '';
 
+  visibility = signal<boolean>(true);
+
   amount = signal<number | null>(null);
   currency = signal<string>('');
 
@@ -31,8 +33,14 @@ export class UserInputComponent {
       );
       this.amount.set(parseFloat(this.enteredAmount));
       this.currency.set(this.selectedCurrency);
+
+      this.visibility.set(true);
     } else {
       console.warn('Please select a currency and enter an amount');
     }
+  }
+
+  onCloseForm(isVisible: boolean) {
+    this.visibility.set(isVisible);
   }
 }

@@ -6,8 +6,9 @@
 />
 
 <div class="currency">
-  <button (click)="setCurrency('usd')">USD</button>
-  <button (click)="setCurrency('euro')">EURO</button>
+  <button (click)="setCurrency('USD')">USD</button>
+  <button (click)="setCurrency('EUR')">EURO</button>
 </div>
 
-<app-result [selectedCurrency]="currency()" [enteredAmount]="amount()" />
+@if(visibility()) {
+<app-result [selectedCurrency]="currency()" [enteredAmount]="amount()" (close)="onCloseForm($event)"/>}
