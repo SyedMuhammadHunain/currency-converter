@@ -11,4 +11,8 @@
 </div>
 
 @if(visibility()) {
-<app-result [selectedCurrency]="currency()" [enteredAmount]="amount()" (close)="onCloseForm($event)"/>}
+<app-result
+  [selectedCurrency]="currency()"
+  [enteredAmount]="amount()"
+  (close)="onCloseForm($event)"
+/>}
