@@ -1,13 +1,32 @@
-<input
-  type="number"
-  (keydown.enter)="onKeydownEnter()"
-  [(ngModel)]="enteredAmount"
-  placeholder="Enter amount..."
-/>
+<div class="input-container">
+  <input
+    type="number"
+    (keydown.enter)="onKeydownEnter()"
+    [(ngModel)]="enteredAmount"
+    placeholder="Enter amount..."
+    (input)="onAmountChange()"
+  />
 
-<div class="currency">
-  <button (click)="setCurrency('USD')">USD</button>
-  <button (click)="setCurrency('EUR')">EURO</button>
+  <div class="currency">
+    <button 
+      (click)="setCurrency('USD')" 
+      [class.active]="selectedCurrency === 'USD'"
+    >
+      USD
+    </button>
+    <button 
+      (click)="setCurrency('EUR')" 
+      [class.active]="selectedCurrency === 'EUR'"
+    >
+      EUR
+    </button>
+  </div>
+  
+  @if(enteredAmount && selectedCurrency) {
+    <div class="convert-hint">
+      Press Enter to convert
+    </div>
+  }
 </div>
 
 @if(visibility()) {

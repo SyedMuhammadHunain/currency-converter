@@ -1,14 +1,20 @@
 @if(isShow()) {
+<div class="backdrop" (click)="onClose()"></div>
 <div class="result-form">
+  <div class="result-header">Conversion Result</div>
+  
   <div class="currency-from">
     {{ enteredAmount() | currency: selectedCurrency() : 'symbol': '1.2-2'}}
   </div>
+  
   <div class="arrow-icon">
     <i class="fa-solid fa-arrow-down"></i>
   </div>
+  
   <div class="currency-to">
     {{ convertedAmount() | currency : 'PKR' : 'symbol' : '1.2-2' }}
   </div>
-  <button (click)="onClose()">Close</button>
+  
+  <button class="close-button" (click)="onClose()">Close</button>
 </div>
 }

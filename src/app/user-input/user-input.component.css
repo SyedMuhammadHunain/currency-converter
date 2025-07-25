@@ -1,17 +1,66 @@
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 input {
-  border: 1px solid white;
-  border-radius: 35px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
   color: white;
-  position: absolute;
+  position: relative;
   text-align: center;
   font-family: "Special Gothic Expanded One";
-  font-size: 8rem;
-  width: 40%;
-  height: 15vh;
-  background-color: transparent;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  width: 50vw;
+  max-width: 600px;
+  min-width: 300px;
+  height: 12vh;
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 4px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+input:focus::placeholder {
+  opacity: 0.3;
+  transform: translateY(-5px);
 }
 
 input::-webkit-inner-spin-button,
@@ -24,71 +73,175 @@ input::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1px;
-  border: 1px solid white;
-  border-radius: 50px;
-  width: 20vw; /* responsive based on viewport width */
-  height: 6vh;
+  gap: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  width: 25vw;
+  max-width: 300px;
+  min-width: 200px;
+  height: 7vh;
+  min-height: 50px;
   position: relative;
-  top: 40%;
-  left: 40%;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .currency button {
   flex: 1;
-  padding: 0.8rem 1rem;
+  padding: 1.2rem 1.5rem;
   border: none;
   color: white;
-  background-color: transparent;
-  font-size: 1.1rem;
+  background: transparent;
+  font-size: 1.4rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  min-width: 0; /* prevent overflow */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
+  position: relative;
+  font-family: "Special Gothic Expanded One";
+  letter-spacing: 1px;
+}
+
+.currency button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.currency button:hover::before {
+  opacity: 1;
+}
+
+.currency button:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.currency button.active {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .currency button:first-child {
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
 
 .currency button:last-child {
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
-/* 🔽 Tablet & below */
-@media (max-width: 768px) {
-  .currency {
-    width: 40vw;
-    height: 6vh;
-    left: 30%;
-  }
-
-  .currency button {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.8rem;
-  }
+.convert-hint {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+  text-align: center;
+  animation: pulse 2s infinite;
 }
 
-/* 🔽 Mobile */
-@media (max-width: 480px) {
-  .currency {
-    width: 80vw;
-    left: 10%;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
   }
-
-  .currency button {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.6rem;
+  50% {
+    opacity: 1;
   }
 }
 
 @media (max-width: 768px) {
   input {
-    width: 80%;
-    top: 50%;
-    height: 7rem;
-    font-size: 5rem;
+    width: 70vw;
+    font-size: 4rem;
+    height: 10vh;
+  }
+  
+  input::placeholder {
+    font-size: 2.5rem;
+  }
+  
+  .currency {
+    width: 50vw;
+    height: 6vh;
+  }
+
+  .currency button {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+  
+  .convert-hint {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  input {
+    width: 85vw;
+    font-size: 3rem;
+    height: 8vh;
+    min-height: 60px;
+  }
+  
+  input::placeholder {
+    font-size: 2rem;
+  }
+  
+  .currency {
+    width: 70vw;
+    height: 5vh;
+    min-height: 45px;
+  }
+
+  .currency button {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .convert-hint {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Loading animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

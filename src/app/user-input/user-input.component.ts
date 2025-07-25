@@ -24,6 +24,11 @@ export class UserInputComponent {
   setCurrency(currency: string) {
     this.selectedCurrency = currency;
   }
+  
+  onAmountChange() {
+    // Reset result when amount changes
+    this.calculationService.result.set(null);
+  }
 
   onKeydownEnter() {
     if (this.enteredAmount && this.selectedCurrency) {
