@@ -5,21 +5,6 @@
   padding: 3rem 5rem;
   position: relative;
   z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  animation: slideDown 0.8s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 img {
@@ -29,50 +14,9 @@ img {
   transition: transform 0.3s ease;
 }
 
-img:hover {
-  transform: scale(1.05) rotate(5deg);
-}
-
 h1 {
   font-size: 3.2rem;
   font-weight: 400;
   letter-spacing: 2px;
-  background: linear-gradient(45deg, #fff, #e0e7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: none;
   line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .header {
-    justify-content: center;
-    padding: 2rem 3rem;
-  }
-  
-  img {
-    height: 3rem;
-    padding-right: 1.5rem;
-  }
-  
-  h1 {
-    font-size: 2.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 1.5rem 2rem;
-  }
-  
-  img {
-    height: 2.5rem;
-    padding-right: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
 }

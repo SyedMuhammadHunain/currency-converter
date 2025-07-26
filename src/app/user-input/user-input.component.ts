@@ -1,12 +1,10 @@
 import { Component, signal, inject, output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { CalculationService } from '../calculation.service';
-import { ResultComponent } from './result/result.component';
 
 @Component({
   selector: 'app-user-input',
-  imports: [FormsModule, ResultComponent],
+  standalone: false,
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css',
 })
@@ -23,11 +21,6 @@ export class UserInputComponent {
 
   setCurrency(currency: string) {
     this.selectedCurrency = currency;
-  }
-  
-  onAmountChange() {
-    // Reset result when amount changes
-    this.calculationService.result.set(null);
   }
 
   onKeydownEnter() {

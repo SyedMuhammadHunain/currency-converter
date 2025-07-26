@@ -1,18 +1,23 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
-
-import { Component, inject, computed, input, EventEmitter, signal, Output } from '@angular/core';
+import {
+  Component,
+  inject,
+  computed,
+  input,
+  EventEmitter,
+  signal,
+  Output,
+} from '@angular/core';
 import { CalculationService } from '../../calculation.service';
 
 @Component({
   selector: 'app-result',
-  standalone: true,
-  imports: [CommonModule, CurrencyPipe],
+  standalone: false,
   templateUrl: './result.component.html',
   styleUrl: './result.component.css',
 })
 export class ResultComponent {
   calculationService = inject(CalculationService);
-  @Output() close = new EventEmitter;
+  @Output() close = new EventEmitter();
   isClose: boolean = false;
 
   enteredAmount = input.required<number | null>();

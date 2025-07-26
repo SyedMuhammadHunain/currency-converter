@@ -9,9 +9,9 @@ export class CalculationService {
   convertCurrency(enteredAmount: number, currency: string) {
     let converted: number;
     if (currency === 'USD') {
-      converted = enteredAmount * 278.50; // More realistic PKR rate
+      converted = enteredAmount * 278.50;
     } else if (currency === 'EUR') {
-      converted = enteredAmount * 302.75; // More realistic PKR rate
+      converted = enteredAmount * 302.75;
     } else {
       converted = 0;
     }
